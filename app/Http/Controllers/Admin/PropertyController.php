@@ -36,7 +36,7 @@ class PropertyController extends Controller
         ]);
 
         return view('admin.properties.form', [
-            'property' => new Property()
+            'property' => $property
         ]);
     }
 

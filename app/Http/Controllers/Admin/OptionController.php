@@ -13,8 +13,8 @@ class OptionController extends Controller
      */
     public function index()
     {
-        return view('admin.option.index', [
-            'option' => Option::paginate(25)
+        return view('admin.options.index', [
+            'options' => Option::paginate(25)
         ]);
     }
 
@@ -25,7 +25,7 @@ class OptionController extends Controller
     {
         $option = new Option();
 
-        return view('admin.option.form', [
+        return view('admin.options.form', [
             'option' => $option
         ]);
     }
@@ -41,7 +41,7 @@ class OptionController extends Controller
 
     public function edit(Option $option)
     {
-        return view('admin.option.form', [
+        return view('admin.options.form', [
             'option' => $option
         ]);
     }

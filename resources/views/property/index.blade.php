@@ -6,7 +6,7 @@
 
     <div class="bg-light p-5 mb-5 text-center">
         <form action="" method="get" class="container d-flex gap-2">
-            <input type="number" placeholder="Budget max" class="form-control" name="price" value="">
+            <input type="number" placeholder="Budget max" class="form-control" name="price" value="{{$input['price'] ?? ''}}">
         </form>
     </div>
 
@@ -23,6 +23,5 @@
             {{$properties->links()}}
         </div>
     </div>
-
 
 @endsection

@@ -2,18 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchPropertiesRequest;
 use App\Models\Property;
 use Illuminate\Http\Request;
 
 
 class PropertyController extends Controller
 {
-    public function index()
+    public function index(SearchPropertiesRequest $request)
     {
-        $properties = Property::paginate(16);
+        $query = Property::query();
+
+        if($request->has('price')){
+            $query = $query->where('price', '<=', $request->input('price'));
+        }
 
         return view('property.index', [
-            'properties' => $properties
+            'properties' => $query->paginate(16),
+            'input' => $request->validated()
         ]);
     }
 

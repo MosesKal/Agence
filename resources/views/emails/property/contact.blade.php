@@ -1,12 +1,14 @@
 <x-mail::message>
-# Introduction
+# Nouvelle demande de contact
 
-The body of your message.
+Une nouvelle demande de contact a ete fait pour le bien <a href="{{route('property.show', ['slug' => $property->getSlug(), 'property'=>$property])}}">{{$property->title}}</a>.
 
-<x-mail::button :url="''">
-Button Text
-</x-mail::button>
+- Prenom : {{$data['firstname']}}
+- Nom : {{$data['lastname']}}
+- Telephone : {{$data['phone']}}
+- Email : {{$data['email']}}
 
-Thanks,<br>
-{{ config('app.name') }}
+**Message :**<br>
+{{$data['message']}}
+
 </x-mail::message>

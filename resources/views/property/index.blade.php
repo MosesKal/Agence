@@ -20,11 +20,15 @@
 
     <div class="container mt-4">
         <div class="row">
-            @foreach ($properties as $property)
+            @forelse ($properties as $property)
             <div class="col-3 mb-4">
                     @include('property.card')
             </div>
-            @endforeach
+            @empty
+                <div class="col-3 alert">
+                    Aucun bien ne correspond a votre recherche
+                </div>
+            @endforelse
         </div>
 
         <div class="my-4">

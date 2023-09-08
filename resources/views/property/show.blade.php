@@ -21,15 +21,15 @@
             <form action="{{route('property.contact', $property)}}" method="post" class="vstack gap-3">
                 @csrf
                 <div class="row">
-                    @include("shared.input", ['class'=> 'col','name'=>'firstname', 'label'=> 'Prenom', 'value' => 'dev']) 
-                    @include("shared.input", ['class'=> 'col','name'=>'lastname', 'label'=> 'Nom', 'value' => 'Moses']) 
+                    @include("shared.input", ['class'=> 'col','name'=>'firstname', 'label'=> 'Prenom', ]) 
+                    @include("shared.input", ['class'=> 'col','name'=>'lastname', 'label'=> 'Nom']) 
                 </div>
     
                 <div class="row">
-                    @include("shared.input", ['class'=> 'col','name'=>'phone', 'label'=> 'Telephone', 'value'=> '0992422969']) 
-                    @include("shared.input", ['type'=> 'email', 'class'=>'col','name'=>'email', 'label'=> 'Email', 'value'=>'mosesziongo@gmail.com']) 
+                    @include("shared.input", ['class'=> 'col','name'=>'phone', 'label'=> 'Telephone']) 
+                    @include("shared.input", ['type'=> 'email', 'class'=>'col','name'=>'email', 'label'=> 'Email']) 
                 </div>
-                @include("shared.input", ['type'=> 'textarea', 'class'=>'col','name'=>'message', 'label'=> 'votre message', 'value'=>'text description']) 
+                @include("shared.input", ['type'=> 'textarea', 'class'=>'col','name'=>'message', 'label'=> 'votre message']) 
                 <div class="mt-3">
                     <button class="btn btn-primary">Nous contacter</button>
                 </div>
@@ -77,7 +77,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 @endsection

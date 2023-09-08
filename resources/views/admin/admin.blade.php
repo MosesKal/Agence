@@ -13,6 +13,14 @@
 
 
         <title>@yield('title') | Administration</title>
+
+        <style>
+          @layer reset {
+            button {
+              all : unset;
+            }
+          }
+        </style>
     </head>
     <body>
 
@@ -37,10 +45,21 @@
                     <a @class(['nav-link', 'active' => str_contains($route, 'option.')]) aria-current="page" href="{{route('admin.option.index')}}">Gerer les option</a>
                   </li>
                 </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-success" type="submit">Search</button>
-                </form>
+
+                <div class="ms-auto">
+                  @auth
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                         <form action="{{route('logout')}}" method="post">
+                          @csrf
+                          @method('delete')
+                          <button class="nav-link">Se deconnecter</button>
+                         </form>
+                      </li>
+                    </ul>  
+                  @endauth
+                </div>
+
               </div>
             </div>
           </nav>
